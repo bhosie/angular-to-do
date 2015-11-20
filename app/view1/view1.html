@@ -1,0 +1,14 @@
+<p>This is the partial for view 1.</p>
+<p>total todos: {{ (todos | filter:(t.done = false)).length  }} / {{todos.length}}</p>
+<ul>
+	<li ng-repeat="t in todos">
+		<span class="done-{{t.done}}">{{t.title}}</span>
+		<span><input type="checkbox" ng-model="t.done" /></span>
+		<!--magic: https://docs.angularjs.org/api/ng/input/input%5Bcheckbox%5D#!-->
+	</li>
+</ul>
+
+<form>
+	<input ng-model="itemText"/>&nbsp;
+	<button ng-click="addItem()">Add</button>
+</form>
